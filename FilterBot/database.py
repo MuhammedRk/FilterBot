@@ -43,6 +43,19 @@ class Database:
         except:
             print('Couldnt save, check your db')
 
+    async def get_filters(self, group_id):
+        mycol = self.client1[str(group_id)]
+
+        texts = []
+        query = mycol.find()
+        try:
+            for file in query:
+                text = file['text']
+                texts.append(text)
+        except:
+            pass
+        return texts
+
     async def find_filter(self, group_id, name):
         mycol = self.client1[str(group_id)]
     
