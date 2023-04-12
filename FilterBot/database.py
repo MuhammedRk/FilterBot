@@ -137,16 +137,16 @@ class Database:
 
         data = {'_id': user_id, 'group_details' : [group_details], 'active_group' : group_id}
     
-        if mycol.count_documents( {"_id": user_id} ) == 0:
+        if self.client2.count_documents( {"_id": user_id} ) == 0:
             try:
-                mycol.insert_one(data)
+                self.client2.insert_one(data)
                 return True
             except:
                 print('Some error occured!')
 
         else:
             try:
-                mycol.update_one({'_id': user_id}, { "$push": {"group_details": group_details}, "$set": {"active_group" : group_id} })
+                self.client2.update_one({'_id': user_id}, { "$push": {"group_details": group_details}, "$set": {"active_group" : group_id} })
                 return True
             except:
                 print('Some error occured!')
