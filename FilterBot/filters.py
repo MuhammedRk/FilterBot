@@ -278,11 +278,11 @@ async def give_filter(client,message):
                     if fileid == "None":
                         if btn == "[]":
                             if AUTO_DELETE:
-                                delete = await client.send_message(group_id, reply_text, disable_web_page_preview=True)
+                                delete = await client.send_message(group_id, reply_text, disable_web_page_preview=True, reply_to_message_id=reply_id)
                                 await asyncio.sleep(AUTO_DELETE_SECOND)
                                 await delete.delete()
                             else:
-                                delete = await client.send_message(group_id, reply_text, disable_web_page_preview=True)
+                                await client.send_message(group_id, reply_text, disable_web_page_preview=True, reply_to_message_id=reply_id)
 
                         else:
                             if AUTO_DELETE:
