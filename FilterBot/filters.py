@@ -280,7 +280,7 @@ async def give_filter(client,message):
                                 delete = await client.send_message(group_id, reply_text, disable_web_page_preview=True)
                                 await asyncio.sleep(AUTO_DELETE_SECOND)
                                 await delete.delete()
-                            esle:
+                            else:
                                 delete = await client.send_message(group_id, reply_text, disable_web_page_preview=True)
 
                         else:
@@ -295,7 +295,7 @@ async def give_filter(client,message):
                                 )
                                 await asyncio.sleep(AUTO_DELETE_SECOND)
                                 await delete.delete()
-                            esle:
+                            else:
                                 button = eval(btn)
                                 await client.send_message(
                                     group_id,
