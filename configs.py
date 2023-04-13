@@ -60,7 +60,7 @@ if bool(environ.get("WEBHOOK", False)):
 
     SUPPORT_CHAT = environ.get("SUPPORT_CHAT", "MoTechGroup")
 
-    START_TXT = environ.get("START_MESSAGE", StartTxT)
+    START_TXT = environ.get("START_TXT", StartTxT)
 
     HELP_TXT = environ.get("HELP_MESSAGE", HelpTxT)
 
